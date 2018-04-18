@@ -1,0 +1,55 @@
+WEB 1100 Test 1
+
+You must build a class called BitCoin that will accomplish three things. 
+
+1.	Grabs information using an ajax function from a bitcoin price API
+a.	URL: "https://bitpay.com/api/rates"
+b.	Must have a success and error function
+c.	The name of the function must be getPrices
+2.	Populates information inside of a table.
+a.	Table must hold 6 COLUMNS and 2 ROWS
+b.	The first row contains the headers and the second row contains the information itself.
+c.	The function should take the information from the first function as a parameter to apply the information in html elements.
+d.	Name the function setPrice
+3.	Refreshes the information
+a.	call getPrices again and update the information.
+b.	call the function refresh
+
+
+Instructions
+
+1.	Make the HTML page and link your css and javascript files. (10 points)
+2.	Setup your HTML page. (40 points)
+a.	You can use a table element
+i.	<table></table> This is the parent element for the table
+ii.	<th></th> This is the table header elements
+iii.	<td><td> This is the table data, this is where the information will go
+b.	 
+i.	This is how the end product should look at minimum. If you want to make it look better it is up to you.
+3.	Next create the class and its constructor (10 points)
+a.	Make sure the you understand how to construct a class.
+i.	Use the class keyword
+ii.	Make sure the name of the class is capitalized.
+iii.	Make sure the constructor can take in parameters
+iv.	Make sure the properties of the class are set within the constructors
+b.	Create an instance of that class after your class definition.
+4.	getPrices (25 points)
+a.	The function definition should be below the constructor
+b.	Inside this function you should have an ajax function, so make sure you have jquery linked in you html file.
+c.	You don’t need a type in your ajax function, because by default its get, but make sure you put the url and the dataType(“json”). Also have a success and error function to handle the asynchronous call. 
+d.	Inside the success function set the property prices by using this.prices = data. In the error function, make sure you console.log(“There was an error getting from the API”), or something similar.
+e.	In the constructor use this.getPrices() to initiate the function
+5.	setPrices (25 points)
+a.	Make sure setPrices definition comes before get Prices. This is because you will be using it inside of getPrices success function.
+b.	To actually populate the HTML elements, you have to select the elements from the DOM. You CAN select inside of the function but its best practice is to select them from out of the class so that they can be used with other classes. At the very beginning of the script.js page select all your td elements. Then pass them into the class as parameters.
+c.	In the constructor, make sure you set this.td = td before you use getPrices().
+d.	The parameters for setPrices should be td and prices. These, obviously, represent this.td and this.prices. Make sure you pass them in when you call setPrices within getPrices success function.
+e.	Inside of setPrices, use a for loop to populate the empty <td> elements with its corresponding data.
+6.	Refresh (5 points)
+a.	Simply call getPrices() within this function.
+7.	Refresh Button (10 points)
+a.	Create a refresh button that when clicked calls the refresh function within the INSTANCE of the class you created
+8.	Add Another Price (25 points)
+a.	Create a button that when pressed takes in a value that should pertain to a currency code that is within the array that you receive from the API.
+b.	You should use window.prompt to ask the user what currency code to look for. Save that value to a variable and search through the array to find if the variable matches a currency code in the array. If it doesn’t, console.error out an error saying that you couldn’t find that country code.
+c.	Create a new set of boxes to hold a new set of information. The top part should have, for instance if the user types in the window.prompt “BRL” a new set boxes should be added to the grid that at the top part says `BTC/BRL’ and the bottom gives the value.

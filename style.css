@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-image: url("https://lvena26b6e621o8sl2qkx1ql-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/How_to_send_receive_Bitcoin_v2_2000_1000-1.jpg")
+}
+.bit{
+    position: absolute;
+    top: 25vh;
+    left:15vw;
+}
+.refresh{
+    position: absolute;
+    top: 25vh;
+    left:22vw;
+}
+.newprice{
+    position: absolute;
+    top: 25vh;
+    left:27vw;
+}
+table{
+    position: absolute;
+    top: 30vh;
+    left:15vw;
+    min-width: 70vw;
+    min-height: 30vh;
+    border: 5px solid white;
+}
+.line1{
+    flex: 1;
+}
+.line2{
+    flex: 1;
+    align-items: center;
+    text-align: center;
+}
+th{
+    border: 2px solid white; 
+    color: white;
+    font-size: 25px;
+}
+td{
+    border: 2px solid white; 
+    color: white;
+}
+.bit:hover, .refresh:hover, .newprice:hover{
+    cursor: pointer;
+}
